@@ -1,0 +1,19 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["<oss@fastly.com>"]
+description = "A basic starter kit that demonstrates routing, simple synthetic responses and overriding caching rules."
+language = "go"
+manifest_version = 3
+name = "Default starter for Go"
+
+
+
+[setup.backends."api.openweathermap.org"]
+description = "OpenWeatherMap API Server"
+address = "api.openweathermap.org"
+port = 443
+
+[setup.dictionaries."weather_auth".items.key]
+description = "API token for openweathermap.org"
+input_type = "string"
